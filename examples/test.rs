@@ -31,3 +31,7 @@ fn main() {
         ws2811_init(std::ptr::null_mut());
    }
 }
+
+unsafe fn set_led(foo: &ws2811_t, index: isize, value: u32) {
+    *foo.channel[0].leds.offset(index) = value
+}
