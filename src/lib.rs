@@ -27,15 +27,6 @@ pub type uint_fast32_t = ::libc::c_ulong;
 pub type uint_fast64_t = ::libc::c_ulong;
 pub type intptr_t = ::libc::c_long;
 pub type uintptr_t = ::libc::c_ulong;
-pub type int_fast16_t = ::libc::c_long;
-pub type int_fast32_t = ::libc::c_long;
-pub type int_fast64_t = ::libc::c_long;
-pub type uint_fast8_t = ::libc::c_uchar;
-pub type uint_fast16_t = ::libc::c_ulong;
-pub type uint_fast32_t = ::libc::c_ulong;
-pub type uint_fast64_t = ::libc::c_ulong;
-pub type intptr_t = ::libc::c_long;
-pub type uintptr_t = ::libc::c_ulong;
 pub type intmax_t = ::libc::c_long;
 pub type uintmax_t = ::libc::c_ulong;
 #[repr(C)]
@@ -51,20 +42,6 @@ impl ::std::clone::Clone for Struct_Unnamed1 {
     fn clone(&self) -> Self { *self }
 }
 impl ::std::default::Default for Struct_Unnamed1 {
-    fn default() -> Self { unsafe { ::std::mem::zeroed() } }
-}
-pub type rpi_hw_t = Struct_Unnamed1;
-#[repr(C, packed)]
-#[derive(Copy)]
-pub struct Struct_Unnamed2 {
-    pub ctl: uint32_t,
-    pub sta: uint32_t,
-    pub dmac: uint32_t,
-    pub resvd_0x0c: uint32_t,
-    pub rng1: uint32_t,
-    pub dat1: uint32_t,
-    pub fif1: uint32_t,
-    impl ::std::default::Default for Struct_Unnamed1 {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
 pub type rpi_hw_t = Struct_Unnamed1;
@@ -104,21 +81,6 @@ impl ::std::default::Default for Struct_Unnamed3 {
 pub type pwm_pin_table_t = Struct_Unnamed3;
 #[repr(C)]
 #[derive(Copy)]
-#[repr(C)]
-#[derive(Copy)]
-pub struct Struct_Unnamed3 {
-    pub pinnum: ::libc::c_int,
-    pub altnum: ::libc::c_int,
-}
-impl ::std::clone::Clone for Struct_Unnamed3 {
-    fn clone(&self) -> Self { *self }
-}
-impl ::std::default::Default for Struct_Unnamed3 {
-    fn default() -> Self { unsafe { ::std::mem::zeroed() } }
-}
-pub type pwm_pin_table_t = Struct_Unnamed3;
-#[repr(C)]
-#[derive(Copy)]
 pub struct Struct_Unnamed4 {
     pub count: ::libc::c_int,
     pub pins: *const pwm_pin_table_t,
@@ -130,21 +92,6 @@ impl ::std::default::Default for Struct_Unnamed4 {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
 pub type pwm_pin_tables_t = Struct_Unnamed4;
-pub enum Struct_ws2811_device { }
-pub type ws2811_led_t = uint32_t;
-#[repr(C)]
-#[derive(Copy)]
-pub struct Struct_Unnamed5 {
-    pub gpionum: ::libc::c_int,
-    pub invert: ::libc::c_int,
-    pub count: ::libc::c_int,
-    pub brightness: ::libc::c_int,
-    pub strip_type: ::libc::c_int,
-    pub leds: *mut ws2811_led_t,
-}
-impl ::std::clone::Clone for Struct_Unnamed5 {
-    fn clone(&self) -> Self { *self }
-}
 pub enum Struct_ws2811_device { }
 pub type ws2811_led_t = uint32_t;
 #[repr(C)]
@@ -214,11 +161,4 @@ extern "C" {
     pub fn ws2811_fini(ws2811: *mut ws2811_t);
     pub fn ws2811_render(ws2811: *mut ws2811_t) -> ::libc::c_int;
     pub fn ws2811_wait(ws2811: *mut ws2811_t) -> ::libc::c_int;
-}
-
-fn main() {
-  println!("Success!");
-  unsafe {
-    ws2811_init(std::ptr::null_mut());
-  }
 }

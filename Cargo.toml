@@ -1,5 +1,5 @@
 [package]
-name = "neo"
+name = "ws2811"
 version = "0.1.0"
 authors = ["vikaton"]
 build = "build.rs"
