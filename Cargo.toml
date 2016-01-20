@@ -1,0 +1,11 @@
+[package]
+name = "neo"
+version = "0.1.0"
+authors = ["vikaton"]
+build = "build.rs"
+
+[dependencies]
+libc = "*"
+
+[build-dependencies]
+gcc = "*"
