@@ -4,9 +4,9 @@ use ws2811::*;
 use std::mem;
 
 fn main() {
-  println!("Success!");
+  println!("Starting");
   unsafe {
-      let ledstring = ws2811_t {
+      let mut ledstring = ws2811_t {
         device: mem::uninitialized(),
         rpi_hw: mem::uninitialized(),
         freq: 800000,
@@ -28,10 +28,10 @@ fn main() {
                     leds: mem::uninitialized(),
                 }]
       };
-        ws2811_init(std::ptr::null_mut());
+        ws2811_init(&mut ledstring);
    }
 }
 
-unsafe fn set_led(foo: &ws2811_t, index: isize, value: u32) {
+unsafe fn set_led(foo: &mut ws2811_t, index: isize, value: u32) {
     *foo.channel[0].leds.offset(index) = value
 }
