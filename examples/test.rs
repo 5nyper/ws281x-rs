@@ -14,7 +14,7 @@ fn main() {
         channel: [ws2811_channel_t {
                     gpionum: 18,
                     invert: 0,
-                    count: 256,
+                    count: 12,
                     brightness: 32,
                     strip_type: mem::uninitialized(),
                     leds: mem::uninitialized(),
@@ -30,8 +30,4 @@ fn main() {
       };
         ws2811_init(&mut ledstring);
    }
-}
-
-unsafe fn set_led(foo: &mut ws2811_t, index: isize, value: u32) {
-    *foo.channel[0].leds.offset(index) = value
 }
