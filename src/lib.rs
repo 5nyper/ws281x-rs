@@ -30,7 +30,7 @@ pub type intptr_t = ::libc::c_long;
 pub type uintptr_t = ::libc::c_ulong;
 pub type intmax_t = ::libc::c_long;
 pub type uintmax_t = ::libc::c_ulong;
-const DOT_COLORS: [u32;8] = [0x200000,   // red
+pub const DOT_COLORS: [u32;8] = [0x200000,   // red
 				    0x201000,   // orange
 				    0x202000,   // yellow
 				    0x002000,   // green
@@ -171,6 +171,6 @@ extern "C" {
     pub fn ws2811_render(ws2811: *mut ws2811_t) -> ::libc::c_int;
     pub fn ws2811_wait(ws2811: *mut ws2811_t) -> ::libc::c_int;
 }
-unsafe fn set_led(foo: &mut ws2811_t, index: isize, value: u32) {
+pub unsafe fn set_led(foo: &mut ws2811_t, index: isize, value: u32) {
     *foo.channel[0].leds.offset(index) = value
 }
