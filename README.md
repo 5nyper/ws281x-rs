@@ -1,2 +1,2 @@
-# ws2811-rs
-Bindings for ws2811 (https://github.com/jgarff/rpi_ws281x)
+# ws281x-rs
+Bindings for rpi-ws281x (https://github.com/jgarff/rpi_ws281x)
