@@ -1,7 +1,7 @@
 #![allow(deprecated)]
-extern crate ws2811;
+extern crate ws281x;
 
-use ws2811::*;
+use ws281x::*;
 use std::mem;
 
 fn main() {
@@ -29,12 +29,10 @@ fn main() {
                     leds: mem::uninitialized(),
                 }]
       };
-      ws2811_init(&mut ledstring);                          // initialize
-      
-      set_led(&mut ledstring, 1, ws2811::DOT_COLORS[0]);    // set LED 1 to color RED(?)
-      ws2811_render(&mut ledstring);                        // update hardware
-      
+      ws2811_init(&mut ledstring);
+      set_led(&mut ledstring, 1, ws281x::DOT_COLORS[0]);
+      ws2811_render(&mut ledstring);
       std::thread::sleep_ms(1000);
-      ws2811_fini(&mut ledstring);                          // Finish before exiting program
+      ws2811_fini(&mut ledstring);
    }
 }
