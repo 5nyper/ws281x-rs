@@ -1,5 +1,9 @@
 extern crate gcc;
 
 fn main() {
-    gcc::Config::new().file("src/headers/ws2811.c").compile("libws2811.a");
+    gcc::compile_library("libws2811.a", &["src/headers/ws2811.c",
+                                          "src/headers/mailbox.c",
+                                          "src/headers/dma.c",
+                                          "src/headers/pwm.c",
+                                          "src/headers/rpihw.c",]);
 }
