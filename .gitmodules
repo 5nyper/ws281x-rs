@@ -1,6 +1,3 @@
-[submodule "src/header"]
-	path = src/header
-	url = https://github.com/jgarff/rpi_ws281x
 [submodule "src/headers"]
 	path = src/headers
 	url = https://github.com/jgarff/rpi_ws281x
