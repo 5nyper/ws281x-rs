@@ -40,15 +40,12 @@
 #include <signal.h>
 
 #include "mailbox.h"
-#include "mailbox.c"
 #include "clk.h"
 #include "gpio.h"
 #include "dma.h"
-#include "dma.c"
 #include "pwm.h"
-#include "pwm.c"
 #include "rpihw.h"
-#include "rpihw.c"
+
 
 #include "ws2811.h"
 
@@ -691,4 +688,3 @@ int ws2811_render(ws2811_t *ws2811)
 
     return 0;
 }
-
