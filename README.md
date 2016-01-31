@@ -1,4 +1,4 @@
-# ws281x-rs
+# ws281x-rs [![Build status](https://api.travis-ci.org/Vikaton/ws281x-rs.svg?branch=master)](https://travis-ci.org/Vikaton/ws281x-rs)
 Bindings for rpi-ws281x (https://github.com/jgarff/rpi_ws281x)
 
 #Example
